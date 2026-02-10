@@ -1,10 +1,10 @@
-# san-valentin
-<!doctype html>
+Para mi amorcito Bella - Preciosa - Hermosa
+Un Detallito especial, con mucho amor. Porque siempre pienso en cómo hacerte sentir especial.
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>¿Quieres ser mi San Valentín?</title>
+  <title>¿Quieres ser mi San Valentín Melanny?</title>
   <style>
     :root{
       --bg1:#ff3b7a;
@@ -154,23 +154,24 @@
     <div class="badge"><span></span> Invitación especial</div>
     <h1>¿Quieres ser mi San Valentín? 💘</h1>
     <p>
-      <span class="names">Chris</span> ➜ <span class="names">Melanny</span><br>
-      Prometo risas, cafecitos y un día lindo contigo.
+      <span class="names">Chris</span> ➜ <span class="names">Mi Muñeca Hermosa</span><br>
+      Prometo risas, detallitos y el mejor San Valentín de tu Vida.
     </p>
 
     <div class="btns" id="btns">
       <button class="yes" id="yesBtn">Sí 💚</button>
-      <button class="no" id="noBtn">No 🙃</button>
+      <button class="no" id="noBtn">Obvio Sí 🙃</button>
     </div>
 
-    <div class="footer">Tip: si quieres, cámbiale los nombres y el mensaje arriba.</div>
+    <div class="footer">Nota: De todas maneras no tienes opción, ya eres mía.</div>
   </div>
 
   <div class="modal" id="modal">
     <div class="modal-box">
       <div class="big">🥹💖</div>
       <h2>¡Sabía que dirías que sí!</h2>
-      <p>Ahora solo falta escoger: ¿cena, helado o ambos? 😄</p>
+      <p>Ahora solo falta escoger: ¿cena, helado o ambos? 😄
+      Pero de que la pasamos Genial, eso seguro</p>
       <button class="close" id="closeBtn">Cerrar</button>
     </div>
   </div>
@@ -209,23 +210,44 @@
       if(e.target === modal) modal.classList.remove("open");
     });
 
-    // Corazones flotando
-    function spawnHeart(){
-      const h = document.createElement("div");
-      h.className = "heart";
-      const size = 10 + Math.random()*18;
-      h.style.width = h.style.height = size + "px";
-      const left = Math.random()*100;
-      h.style.left = left + "vw";
-      h.style.bottom = "-20px";
-      const dur = 4 + Math.random()*4;
-      h.style.animationDuration = dur + "s";
-      const colors = ["#ff2d55","#ff6b9a","#ffd1e3","#c084fc","#fb7185"];
-      h.style.background = colors[Math.floor(Math.random()*colors.length)];
-      document.body.appendChild(h);
-      setTimeout(() => h.remove(), dur*1000);
-    }
-    setInterval(spawnHeart, 350);
+// 💖 Corazones flotando
+function spawnHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+
+  // Tamaño aleatorio
+  const size = 10 + Math.random() * 18;
+  heart.style.width = `${size}px`;
+  heart.style.height = `${size}px`;
+
+  // Posición horizontal aleatoria
+  heart.style.left = `${Math.random() * 100}vw`;
+  heart.style.bottom = "-20px";
+
+  // Duración de animación
+  const duration = 4 + Math.random() * 4;
+  heart.style.animationDuration = `${duration}s`;
+
+  // Colores posibles
+  const colors = [
+    "#ff2d55",
+    "#ff6b9a",
+    "#ffd1e3",
+    "#c084fc",
+    "#fb7185"
+  ];
+  heart.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+  document.body.appendChild(heart);
+
+  // Eliminar corazón al terminar la animación
+  setTimeout(() => {
+    heart.remove();
+  }, duration * 1000);
+}
+
+// Generar corazones constantemente
+setInterval(spawnHeart, 350);
 
     // Explosión extra al dar "sí"
     function confettiHearts(n){
